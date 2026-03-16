@@ -1,9 +1,9 @@
-# sephora-skincare-customer-review-text-mining
+# sephora-skincare-text-mining
 Text mining analysis of 40K+ Sephora skincare reviews using NLP and machine learning to uncover sentiment, customer themes, and recommendation patterns.
 
 
-## Project Overview
-This project applies text mining and machine learning techniques to analyze customer reviews of Sephora skincare products. The objective was to identify what customers like or dislike based on review text, product ratings, and recommendation behavior.
+## Project Over
+This project analyzes more than 40,000 Sephora skincare product reviews using text mining and machine learning techniques to extract customer insights from large-scale review data.The objective was to identify what customers like or dislike based on review text, product ratings, and recommendation behavior.
 
 Because online retailers receive thousands of customer reviews, it is difficult to manually interpret all feedback. This project demonstrates how text mining can transform large-scale unstructured review data into actionable business insights related to customer satisfaction, product performance, and marketing impact.
 
