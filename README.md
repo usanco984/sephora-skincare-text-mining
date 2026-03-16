@@ -1,7 +1,6 @@
 # sephora-skincare-text-mining
 Text mining analysis of 40K+ Sephora skincare reviews using NLP and machine learning to uncover sentiment, customer themes, and recommendation patterns.
 
-
 ## Project Over
 This project analyzes more than 40,000 Sephora skincare product reviews using text mining and machine learning techniques to extract customer insights from large-scale review data.The objective was to identify what customers like or dislike based on review text, product ratings, and recommendation behavior.
 
@@ -19,8 +18,8 @@ Text mining provides a scalable way to extract insights from large volumes of re
 - the factors driving customer satisfaction and dissatisfaction
 - which product features customers discuss most frequently
 - whether customers are likely to recommend a product
-- whether some reviews may reflect promotional or influencer activity rather than organic feedback
-
+- whether Some reviews may originate from promotional or influencer sampling programs
+  
 To explore these questions, this project focuses on two related prediction tasks:
 
 1. **Rating classification** – predicting whether a review reflects positive or negative sentiment based on the product rating.
@@ -53,22 +52,37 @@ The platform was especially useful for comparing multiple algorithms and preproc
 ## Analysis Tasks
 This project included three main analyses:
 
-### 1. Rating Classification
-Reviews were classified into positive or negative classes based on product rating.
+# Analysis Tasks
 
-- Ratings 1–2 → Negative
-- Ratings 4–5 → Positive
+This project includes four analytical experiments:
+
+### 1 Rating Classification
+Classifying reviews as **positive or negative sentiment based on product rating**.
+
+Ratings were converted into binary classes:
+
+- 1–2 → Negative  
+- 4–5 → Positive  
 - Rating 3 was excluded as neutral
 
-This task aimed to examine whether review text can predict explicit satisfaction levels.
+---
 
-### 2. Recommendation Classification
-Reviews were classified based on whether the customer recommended the product.
+### 2 Recommendation Classification
+Predicting **whether a customer recommends the product** based on review text.
 
-This task aimed to examine whether review text can predict customer recommendation behavior, which may reflect a broader overall impression than rating alone.
+This task examines whether recommendation behavior can be predicted using textual feedback.
 
-### 3. Clustering and Sentiment Analysis
-Unsupervised learning was applied to discover hidden themes in the review text, and sentiment analysis was used to evaluate the positive and negative tendencies expressed in reviews.
+---
+
+### 3 Clustering Analysis
+Unsupervised learning was used to **identify hidden themes and discussion topics in customer reviews**.
+
+K-means clustering was applied after dimensionality reduction.
+
+---
+
+### 4 Sentiment Analysis
+Sentiment analysis was applied to measure the **overall positive and negative tone expressed in customer reviews**.
 
 ## Data Preparation
 Different workflows were prepared for each task, but the general preparation process included:
@@ -82,10 +96,11 @@ For the two classification tasks, class imbalance was addressed by creating bala
 
 Typical sample sizes used:
 
-- Rating classification: 1,000–2,000 reviews per class
-- Recommendation classification: 2,000 reviews per class
-- Clustering: 1,000 reviews
-
+| Task | Sample Size |
+|-----|-----|
+| Rating Classification | 4,000 reviews |
+| Recommendation Classification | 4,000 reviews |
+| Clustering | 1,000 reviews |
 ---
 
 ## Text Preprocessing
@@ -143,10 +158,26 @@ Two train-test splits were evaluated:
 This allowed systematic comparison across models and feature representations.
 
 ---
+## Experiment
+This project includes four analytical experiments.
+
+## Experiment 1 — Rating Classification
+Predict whether a review reflects positive or negative sentiment based on product rating.
+
+## Experiment 2 — Recommendation Classification
+Predict whether a customer recommends the product based on review text.
+
+## Experiment 3 — Clustering Analysis
+Identify hidden themes and discussion topics in customer reviews.
+
+## Experiment 4 — Sentiment Analysis
+Evaluate the positive and negative tone expressed in reviews.
+
+---
 
 ## Key Results
 
-### Rating Classification
+### Experiment 1 - Rating Classification
 The strongest models for rating classification were **Logistic Regression** and **SVM**.
 
 Best result:
@@ -160,7 +191,7 @@ Main findings:
 
 An important finding was that the simplest preprocessing pipeline produced the best result. More complex preprocessing methods such as n-grams, token length filtering, and stemming did not consistently improve performance.
 
-### Recommendation Classification
+### Experiment 2 - Recommendation Classification
 The strongest model for recommendation prediction was **Deep Learning**.
 
 Best result:
@@ -172,7 +203,7 @@ Main findings:
 - In some cases, BTO and TO performed as well as or slightly better than TF-IDF
 - Preprocessing changes had only small effects compared with model choice
 
-### Clustering
+### Experiment 3 - Clustering
 Clustering revealed several meaningful customer review themes, including:
 
 - acne / dry skin concerns
@@ -190,7 +221,7 @@ One particularly interesting cluster contained words such as:
 
 This suggests that some reviews may have been influenced by promotional or influencer campaigns rather than reflecting purely organic customer experiences.
 
-### Sentiment Analysis
+### Experiment 4 - Sentiment Analysis
 Sentiment analysis showed that the overall review dataset was generally positive, which was consistent with the rating distribution.
 
 Examples of frequently observed positive terms:
@@ -210,26 +241,25 @@ The average sentiment score decreased after stemming was added, suggesting that 
 ---
 
 ## Business Insights
-This project generated several business-relevant insights:
+The results of this analysis provide several insights that may be useful for businesses analyzing large-scale customer review data. 
 
-- customer reviews can be used to predict both satisfaction and recommendation behavior
-- different business labels may require different modeling approaches
-- recommendation intent and rating do not behave exactly the same way
-- customer reviews reveal not only product feedback, but also signals of promotional campaign activity
-- more preprocessing is not always better; simple pipelines may perform best
+First, the results demonstrate that customer review text can serve as a valuable source of information for predicting customer satisfaction and recommendation behavior. Even when only the written review text was used as input, machine learning models were able to predict rating sentiment and recommendation outcomes with relatively strong accuracy. This suggests that companies can use text mining techniques to monitor customer feedback at scale and detect potential satisfaction issues earlier than through manual review. 
 
-These findings could help retailers and brands better understand customer needs, improve products, and interpret online review quality more carefully.
+Second, the results indicate that product ratings and recommendation behavior represent related but distinct aspects of customer evaluation. Product ratings tend to reflect direct product satisfaction, such as product performance or usability. In contrast, recommendation behavior may reflect a broader overall impression of the product, including factors such as value, expectations, and brand perception. In this study, Logistic Regression and SVM performed best for rating prediction, while Deep Learning showed slightly stronger performance for recommendation prediction. This difference suggests that predicting recommendation behavior may require capturing more complex contextual information from review text. 
 
+Third, the clustering analysis revealed several meaningful themes in customer reviews. These included discussions related to skincare concerns such as acne and dry skin, product types such as moisturizers or face masks, and usage experiences such as cleansing and makeup removal. These patterns suggest that customer reviews frequently focus on product performance and skincare problems, which can help companies better understand the needs and expectations of their customers. An additional interesting finding was the presence of a cluster associated with promotional or influencer-related reviews. Words such as “received,” “complimentary,” “influencer,” and “free” frequently appeared together in one cluster. This suggests that some reviews may originate from promotional sampling programs rather than purely organic customer experiences. For companies analyzing review data, recognizing the presence of promotional reviews may be important when interpreting overall customer sentiment. 
+
+Overall, the findings suggest that text mining of customer reviews can support business decision making by helping companies better understand customer opinions, detect common product concerns, and identify patterns in customer feedback that may not be immediately visible through manual analysis.
 ---
 
 ## What Went Well
 Several aspects of this project were successful:
 
-- the workflow was organized clearly into data preparation, modeling, and evaluation
-- multiple algorithms were compared systematically
-- class imbalance was addressed through balanced sampling
-- strong predictive performance was achieved, with the best models exceeding 82% accuracy
-- clustering identified not only product themes but also a meaningful promotional review cluster
+- The workflow was organized clearly into data preparation, modeling, and evaluation
+- <Multiple algorithms were compared systematically
+- Class imbalance was addressed through balanced sampling
+- Strong predictive performance was achieved, with the best models exceeding 82% accuracy
+- Clustering identified not only product themes but also a meaningful promotional review cluster
 
 A particularly important takeaway was that the best-performing model depended on the target label. Logistic Regression and SVM performed strongly for rating classification, while Deep Learning performed best for recommendation prediction.
 
@@ -238,10 +268,10 @@ A particularly important takeaway was that the best-performing model depended on
 ## Challenges
 This project also involved several challenges:
 
-- limited memory and computation capacity restricted some experiments
-- some models required long processing times
-- interpreting algorithm behavior required additional review and comparison
-- some preprocessing methods were not explored as deeply as originally planned
+- Limited memory and computation capacity restricted some experiments
+- Some models required long processing times
+- Interpreting algorithm behavior required additional review and comparison
+- Some preprocessing methods were not explored as deeply as originally planned
 
 These limitations affected how many experiments could be run and how extensively parameters could be tuned.
 
@@ -250,12 +280,12 @@ These limitations affected how many experiments could be run and how extensively
 ## Future Improvements
 If this project were extended further, the following improvements would be valuable:
 
-- compare results across additional text mining tools
-- apply transformer-based NLP models such as BERT
-- build custom dictionaries and domain-specific stopword lists
-- analyze sentiment patterns within each cluster
-- work with more raw and complex datasets
-- connect text mining results more directly to practical business decisions
+- Compare results across additional text mining tools
+- Apply transformer-based NLP models such as BERT
+- Build custom dictionaries and domain-specific stopword lists
+- Analyze sentiment patterns within each cluster
+- Work with more raw and complex datasets
+- Connect text mining results more directly to practical business decisions
 
 ---
 
