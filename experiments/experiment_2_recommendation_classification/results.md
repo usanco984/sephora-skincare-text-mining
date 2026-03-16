@@ -14,39 +14,65 @@ Because recommendation decisions may reflect overall impressions rather than onl
 
 ---
 
-## Data Preparation
+## Experiment Setup
 
-The dataset originally contained a large imbalance between recommended and non-recommended reviews.  
-To address this issue, the dataset was balanced using sampling.
+The original dataset contains more than 40,000 reviews, but the distribution of recommendation labels is highly imbalanced.
 
-Final dataset used:
+To ensure fair model training and evaluation, the dataset was reduced and balanced.
 
-| Class | Sample Size |
-|------|------|
-| Recommended | 2000 |
-| Not Recommended | 2000 |
+Final dataset configuration:
+
+| Class | Value | Sample Size |
+|------|------|------|
+| Recommended | 1 | 2000 |
+| Not Recommended | 0 | 2000 |
 
 Total observations used: **4000 reviews**
 
----
-
-## Text Preprocessing
-
-Baseline preprocessing steps:
-
-- Tokenize (non letters)
-- Transform Case (lowercase)
-- Stopwords filtering
-
-Additional experiments included:
-
-- Token length filtering
-- n-grams
-- stemming
+To allow consistent comparison across models, the same preprocessing pipeline and experimental conditions were applied to all models.
 
 ---
 
 ## Model Comparison
+
+To evaluate model performance for recommendation prediction, several classification algorithms were tested:
+
+- Naive Bayes  
+- Decision Tree  
+- Logistic Regression  
+- Support Vector Machine (SVM)  
+- Deep Learning  
+- k-Nearest Neighbors (k-NN, k = 5)  
+- Random Forest  
+
+Each model was evaluated using four document vector creation methods:
+
+- Binary Term Occurrence (BTO)
+- Term Occurrence (TO)
+- Term Frequency (TF)
+- TF-IDF
+
+Two train–test splits were tested:
+
+- **70% training / 30% testing**
+- **80% training / 20% testing**
+
+Due to memory limitations of the available hardware, **k-NN and Random Forest were only evaluated using TF-IDF in the 70/30 split experiments**.
+
+---
+## Table 1: Model Performance (70/30 Split)
+
+| Model | BTO | TO | TF | TF-IDF |
+|------|------|------|------|------|
+| Naive Bayes | 68.00% | 67.25% | 68.42% | 67.00% |
+| Decision Tree | 52.92% | 52.92% | 55.67% | 55.25% |
+| Logistic Regression | 77.58% | 78.30% | 77.25% | 76.92% |
+| SVM | 78.08% | 78.33% | 81.92% | 80.42% |
+| Deep Learning | **82.83%** | 81.42% | 81.08% | 81.33% |
+| k-NN (k=5) | — | — | — | 66.20% |
+| Random Forest | — | — | — | 70.92% |
+
+## Table 2: Model Performance (80/20 Split)
 
 | Model | BTO | TO | TF | TF-IDF |
 |------|------|------|------|------|
@@ -55,6 +81,42 @@ Additional experiments included:
 | Logistic Regression | 77.50% | 79.00% | 78.50% | 77.12% |
 | SVM | 78.38% | 78.00% | 83.12% | 81.00% |
 | Deep Learning | **83.83%** | 83.25% | 82.62% | 82.50% |
+| k-NN (k=5) | 71.00% | 74.00% | 74.00% | 74.00% |
+| Random Forest | 64.25% | 63.38% | 71.62% | 72.25% |
+
+## Preprocessing Improvement
+
+Based on the previous model comparison results, **Deep Learning was selected as the best-performing model** for the recommendation classification task.
+
+To explore whether additional preprocessing techniques could improve model performance, several preprocessing variations were tested while keeping the training/testing split fixed at **80/20**.
+
+Although some feature weighting methods such as BTO, TO, and TF occasionally produced slightly higher accuracy, **TF-IDF was selected for preprocessing improvement experiments** to maintain consistency across experiments in this project.
+
+Baseline preprocessing pipeline:
+
+- Tokenize (non letters)
+- Transform Case (lowercase conversion)
+- Stopwords filtering (English)
+
+Additional preprocessing techniques tested:
+
+- Token length filtering
+- N-gram generation
+- Stemming (Porter, Snowball)
+
+## Table 3: Preprocessing Impact (80/20 Split)
+
+| Preprocessing Method | Accuracy (TF-IDF) |
+|------|------|
+| Baseline (Tokenize + Transform Case + Stopwords) | 82.50% |
+| Baseline + Length(3–20) | 81.50% |
+| Baseline + Length(3–20) + N-gram | 82.00% |
+| Baseline + Length(3–20) + N-gram + Porter Stemming | 80.25% |
+| Baseline + Length(3–20) + N-gram + Snowball Stemming | 80.38% |
+| Baseline + Length(3–20) + N-gram + Porter Stemming | 81.75% |
+| Baseline + N-gram + Porter Stemming | 81.00% |
+| Baseline + Length(4–15) + N-gram + Porter Stemming | **83.00%** |
+| Baseline + Length(4–15) + N-gram + Porter Stemming + Porter Stemming | 70.62% |
 
 ---
 
