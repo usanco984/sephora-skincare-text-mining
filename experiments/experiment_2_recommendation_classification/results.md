@@ -2,13 +2,15 @@
 
 ## Goal
 
-The goal of this experiment is to determine whether review text can predict whether a customer recommends a product.
+The goal of this experiment was to predict whether a reviewer recommended a product based on the review text.
 
-The target variable used for classification was:
+The classification target variable used in this experiment was:
 
 - `is_recommended`
 
-This experiment examines whether recommendation behavior can be inferred from textual feedback alone.
+This task evaluates whether recommendation behavior can be inferred from textual information contained in customer reviews.
+
+Because recommendation decisions may reflect overall impressions rather than only numerical evaluations, this experiment explores whether machine learning models can capture these patterns using text features.
 
 ---
 
@@ -58,22 +60,25 @@ Additional experiments included:
 
 ## Key Findings
 
-The strongest performing model was **Deep Learning**, achieving approximately **83% accuracy**.
+Several important findings emerged from the recommendation classification experiments.
 
-Important observations:
+- **Deep Learning achieved the highest performance**, reaching approximately **83% accuracy** in the best configuration.
+- **SVM and Logistic Regression also produced strong results**, but their performance was slightly lower than Deep Learning.
+- **Decision Tree showed the weakest performance**, indicating that tree-based models struggled with high-dimensional text features.
+- In several experiments, **BTO and TO representations produced slightly higher accuracy than TF-IDF**, suggesting that the presence of sentiment-related words may be more important than their frequency.
 
-- Deep learning slightly outperformed traditional models
-- Recommendation prediction appears to require capturing broader contextual meaning in reviews
-- Linear models such as Logistic Regression and SVM also performed well
+- The preprocessing experiments showed that techniques such as **token length filtering and n-gram generation produced only small improvements** in model performance.
 
 ---
 
 ## Interpretation
 
-Unlike rating prediction, recommendation behavior may reflect broader product impressions, including:
+The results of the recommendation classification experiments showed slightly different patterns compared with the rating classification task. One possible explanation is that predicting whether a reviewer recommends a product requires capturing **more contextual meaning within the review text** than predicting rating values. Ratings are directly associated with numerical evaluations and may therefore be easier to predict using relatively simple linear models.
 
-- value perception
-- expectations
-- brand perception
+In contrast, recommendation decisions may depend on the overall impression expressed in the review, including tone, nuance, and the reviewer’s overall experience with the product. As a result, models such as Deep Learning, which can capture more complex patterns in textual data, may perform better for this task.
+
+Interestingly, the results also showed that **BTO and TO representations sometimes performed as well as or slightly better than TF-IDF**. One possible explanation is that many reviews in the dataset are relatively short. In such cases, the presence of sentiment-related words may be more informative than their frequency.
+
+Finally, the preprocessing experiments suggest that **model selection had a greater impact on performance than additional preprocessing techniques**. While some preprocessing variations slightly improved accuracy, the overall differences between configurations were relatively small.
 
 Therefore, models capable of capturing deeper contextual patterns may perform better for this task.
