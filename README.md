@@ -158,20 +158,18 @@ Two train-test splits were evaluated:
 This allowed systematic comparison across models and feature representations.
 
 ---
-## Experiment
-This project includes four analytical experiments.
+## Experiments
 
-## Experiment 1 — Rating Classification
-Predict whether a review reflects positive or negative sentiment based on product rating.
+This project includes four analytical experiments.  
+Detailed results and analysis for each experiment can be found below.
 
-## Experiment 2 — Recommendation Classification
-Predict whether a customer recommends the product based on review text.
+- [Experiment 1 – Rating Classification](experiments/experiment_1_rating_classification/results.md)
 
-## Experiment 3 — Clustering Analysis
-Identify hidden themes and discussion topics in customer reviews.
+- [Experiment 2 – Recommendation Classification](experiments/experiment_2_recommendation_classification/results.md)
 
-## Experiment 4 — Sentiment Analysis
-Evaluate the positive and negative tone expressed in reviews.
+- [Experiment 3 – Clustering Analysis](experiments/experiment_3_clustering/results.md)
+
+- [Experiment 4 – Sentiment Analysis](experiments/experiment_4_sentiment_analysis/results.md)
 
 ---
 
