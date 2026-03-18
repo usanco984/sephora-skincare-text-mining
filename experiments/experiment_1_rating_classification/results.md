@@ -13,11 +13,9 @@ The rating variable was converted into binary classes:
 This experiment evaluates whether machine learning models can predict review sentiment using only textual information.
 
 ---
+## Experiment Setup
 
-## Data Preparation
-
-The original dataset contains a large imbalance between positive and negative reviews.
-
+The original dataset contains a large imbalance between positive and negative reviews.  
 To avoid biased model performance, the dataset was balanced through sampling.
 
 Final dataset used:
@@ -31,19 +29,19 @@ Total observations used: **4000 reviews**
 
 ---
 
-## Text Preprocessing
+### Text Preprocessing
 
 Baseline preprocessing steps:
 
-- Tokenize (non letters)
-- Transform Case (lowercase)
-- Stopwords filtering (English)
+- Tokenize (non letters)  
+- Transform Case (lowercase)  
+- Stopwords filtering (English)  
 
 Additional preprocessing experiments included:
 
-- Token length filtering
-- n-gram generation
-- stemming (Porter and Snowball)
+- Token length filtering  
+- n-gram generation  
+- Stemming (Porter, Snowball)  
 
 ---
 
