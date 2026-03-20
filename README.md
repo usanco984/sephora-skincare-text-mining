@@ -49,8 +49,53 @@ The platform was especially useful for comparing multiple algorithms and preproc
 
 ---
 
-## Analysis Tasks
-This project included three main analyses:
+This project consists of four main analyses combining supervised and unsupervised learning to extract insights from customer reviews.
+
+---
+
+### 1. Rating Classification
+Predicting whether a review is positive or negative based on rating.
+
+- Best Model: Logistic Regression  
+- Best Accuracy: **84.69% (TF-IDF, 80/20 split)**  
+- Insight: Linear models performed best for rating prediction  
+
+👉 [View Details](experiments/experiment_1_rating/results.md)
+
+---
+
+### 2. Recommendation Classification
+Predicting whether a customer recommends a product based on review text.
+
+- Best Model: Deep Learning  
+- Best Accuracy: **~83%**  
+- Insight: Recommendation prediction requires capturing broader context  
+
+👉 [View Details](experiments/experiment_2_recommendation/results.md)
+
+---
+
+### 3. Clustering Analysis
+Identifying hidden themes in customer reviews using unsupervised learning.
+
+- Key Topics: acne, dry skin, cleansing, moisturizer, face mask  
+- Insight: Customer concerns and product usage patterns were clearly identified  
+- Additional Finding: Detected a **promotional / influencer review cluster**  
+
+👉 [View Details](experiments/experiment_3_clustering/results.md)
+
+---
+
+### 4. Sentiment Analysis
+Analyzing overall sentiment and the impact of preprocessing.
+
+- Overall Sentiment: **Positive**  
+- Key Finding: Stemming reduced sentiment scores  
+- Insight: Preprocessing choices can affect sentiment detection  
+
+👉 [View Details](experiments/experiment_4_sentiment/results.md)
+
+---
 
 # Analysis Tasks
 
