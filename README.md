@@ -21,14 +21,23 @@ The analysis focuses on two key prediction tasks—rating classification and rec
 ### Model Comparison
 ![Model Comparison](results/figures/experiment1_model_comparison.png)
 
-This result shows that additional preprocessing techniques such as n-grams and stemming did not consistently improve performance over the baseline pipeline.
+This figure shows that Logistic Regression and SVM outperformed other models in rating classification, with Logistic Regression achieving the highest accuracy.
 
 ---
 
 ### Preprocessing Impact
 ![Preprocessing Impact](results/figures/preprocessing_impact.png)
 
-This result shows that additional preprocessing did not consistently improve accuracy.
+This result shows that additional preprocessing techniques such as n-grams and stemming did not consistently improve performance over the baseline pipeline.
+
+---
+
+### Clustering Insights
+![Clustering Keywords](results/figures/clustering_keywords.png)
+
+Clustering revealed distinct themes in customer reviews such as skin concerns, product usage, and cleansing behavior.  
+
+Notably, a separate cluster of promotional and influencer-driven reviews was identified, suggesting that some reviews may not reflect organic customer experiences and could introduce bias in sentiment analysis.
 
 ---
 ## Business Problem
