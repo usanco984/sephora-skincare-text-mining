@@ -42,6 +42,8 @@ Main attributes used in this study:
 Dataset source:  
 [Sephora Skincare Reviews on Kaggle](https://www.kaggle.com/datasets/melissamonfared/sephora-skincare-reviews)
 
+---
+
 ## Why RapidMiner Was Selected
 RapidMiner was selected as the primary tool because it provides a visual workflow environment and built-in text mining operators. This made it possible to perform preprocessing, feature extraction, classification, clustering, and sentiment analysis efficiently without extensive programming.
 
@@ -49,6 +51,7 @@ The platform was especially useful for comparing multiple algorithms and preproc
 
 ---
 
+## Four Main Experiments (Link)
 This project consists of four main analyses combining supervised and unsupervised learning to extract insights from customer reviews.
 
 ---
