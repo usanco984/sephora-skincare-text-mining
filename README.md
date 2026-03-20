@@ -10,6 +10,29 @@ In addition to classification, this project also compares different prediction t
 
 ---
 
+## Key Takeaways
+
+- Logistic Regression and SVM outperformed other models
+- More preprocessing did not always improve accuracy
+- Clustering revealed promotional / influencer review patterns
+
+---
+
+## Key Results
+
+### Model Comparison
+![Model Comparison](results/figures/experiment1_model_comparison.png)
+
+This figure shows that Logistic Regression and SVM achieved the highest performance.
+
+---
+
+### Preprocessing Impact
+![Preprocessing Impact](results/figures/preprocessing_impact.png)
+
+This result shows that additional preprocessing did not consistently improve accuracy.
+
+---
 ## Business Problem
 Customer reviews contain valuable information that can help companies improve product quality, customer satisfaction, and marketing strategy. However, online retailers often receive thousands of reviews, making it difficult to manually analyze all customer feedback.
 
