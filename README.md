@@ -206,24 +206,10 @@ Two train-test splits were evaluated:
 This allowed systematic comparison across models and feature representations.
 
 ---
-## Experiments
-
-This project includes four analytical experiments.  
-Detailed results and analysis for each experiment can be found below.
-
-- [Experiment 1 – Rating Classification](experiments/experiment_1_rating_classification/results.md)
-
-- [Experiment 2 – Recommendation Classification](experiments/experiment_2_recommendation_classification/results.md)
-
-- [Experiment 3 – Clustering Analysis](experiments/experiment_3_clustering/results.md)
-
-- [Experiment 4 – Sentiment Analysis](experiments/experiment_4_sentiment_analysis/results.md)
-
----
 
 ## Key Results
 
-### Experiment 1 - Rating Classification
+### 1. Rating Classification
 The strongest models for rating classification were **Logistic Regression** and **SVM**.
 
 Best result:
@@ -237,7 +223,7 @@ Main findings:
 
 An important finding was that the simplest preprocessing pipeline produced the best result. More complex preprocessing methods such as n-grams, token length filtering, and stemming did not consistently improve performance.
 
-### Experiment 2 - Recommendation Classification
+### 2. Recommendation Classification
 The strongest model for recommendation prediction was **Deep Learning**.
 
 Best result:
@@ -249,7 +235,7 @@ Main findings:
 - In some cases, BTO and TO performed as well as or slightly better than TF-IDF
 - Preprocessing changes had only small effects compared with model choice
 
-### Experiment 3 - Clustering
+### 3. Clustering
 Clustering revealed several meaningful customer review themes, including:
 
 - acne / dry skin concerns
@@ -267,7 +253,7 @@ One particularly interesting cluster contained words such as:
 
 This suggests that some reviews may have been influenced by promotional or influencer campaigns rather than reflecting purely organic customer experiences.
 
-### Experiment 4 - Sentiment Analysis
+### 4. Sentiment Analysis
 Sentiment analysis showed that the overall review dataset was generally positive, which was consistent with the rating distribution.
 
 Examples of frequently observed positive terms:
