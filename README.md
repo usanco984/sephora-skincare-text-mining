@@ -10,9 +10,9 @@ The analysis focuses on two key prediction tasks—rating classification and rec
 
 ## Key Takeaways
 
-- Logistic Regression and SVM outperformed other baseline models in rating classification
-- More complex preprocessing did not consistently improve accuracy
-- Clustering revealed a distinct promotional / influencer-driven review pattern
+- Logistic Regression and SVM achieved the best performance in rating classification
+- More complex preprocessing did not consistently improve model accuracy
+- Clustering identified a distinct group of promotional / influencer-driven reviews
 
 ---
 
