@@ -162,13 +162,20 @@ K-means clustering was applied after dimensionality reduction.
 ### 4 Sentiment Analysis
 Sentiment analysis was applied to measure the **overall positive and negative tone expressed in customer reviews**.
 
+---
+
 ## Data Preparation
+
 Different workflows were prepared for each task, but the general preparation process included:
 
-- selecting relevant attributes
-- removing missing values
-- converting review text into text format
-- balancing classes through sampling
+- selecting relevant attributes  
+- removing missing values  
+- converting review text into text format  
+- balancing classes through sampling  
+
+![Data Preparation Workflow](results/figures/dataprep_workflow.png)
+
+The workflow above illustrates the key preprocessing steps implemented in RapidMiner, including filtering, role assignment, text transformation, and sampling.
 
 For the two classification tasks, class imbalance was addressed by creating balanced datasets with equal numbers of positive and negative examples. This step was important because the original dataset contained many more positive reviews than negative ones. Without balancing, model performance could be biased toward the majority class.
 
